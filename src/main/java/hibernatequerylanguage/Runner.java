@@ -37,12 +37,28 @@ public class Runner {
             employee1.setSalary(5000);
             session.persist(employee1);
 
+            //update islemi
+            String hql = "update Employee set name = :newName where salary = :salary";
+            Query query = session.createQuery(hql);
+            query.setParameter("newName","Hasan");
+            query.setParameter("salary",5000);
+            int count = query.executeUpdate();
+            System.out.println(count);
 
+            //group by
             List<String> employeess = session.createQuery("select e.name from Employee e group by e.name").list();
 
             for (String w : employeess) {
                 System.out.println(w);
             }
+
+            //group by-order by
+            List<String> employeess1 = session.createQuery("select e.name from Employee e group by e.name order by e.name").list();
+
+            for (String w : employeess1) {
+                System.out.println(w);
+            }
+
 
             List<Integer> employeesss = session.createQuery("select e.salary from Employee e group by e.salary").list();
 
@@ -50,8 +66,9 @@ public class Runner {
                 System.out.println(w);
             }
 
-            Query query = session.createQuery("SELECT SUM(salary) FROM Employee");
-            Long salary = (Long) query.getSingleResult();
+            //aggregate fon.
+            Query query1 = session.createQuery("SELECT SUM(salary) FROM Employee");
+            Long salary = (Long) query1.getSingleResult();
             System.out.println(salary);
 
             List<Long> employeeList = session.createQuery("SELECT SUM(salary) FROM Employee").list();
@@ -62,7 +79,7 @@ public class Runner {
                 System.out.println(employee);
             }
 
-
+            //group by - having
             List<Object[]> employeeList1 = session.createQuery("select e.name,sum(e.salary) from Employee" +
                     " e group by e.name having sum(e.salary)>40000").list();
 

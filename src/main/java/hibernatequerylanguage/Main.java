@@ -1,5 +1,6 @@
 package hibernatequerylanguage;
 
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -20,10 +21,8 @@ public class Main {
         try{
             tx=session.beginTransaction();
 
-            Employee employee1 = new Employee();
-            employee1.setName("Ahmet");
-            employee1.setSalary(5000);
-            session.persist(employee1);
+            //queryleri burada calistiriyorum
+
             tx.commit();
 
         }finally {
