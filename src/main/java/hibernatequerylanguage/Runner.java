@@ -25,11 +25,17 @@ public class Runner {
 
             tx = session.beginTransaction();
 
-            List<Employee> employees = session.createQuery("select e.name from Employee e where e.name='Omer'").list();
+            List<Employee> employees = session.createQuery("from Employee e where e.name='Omer'").list();
 
             for (Employee employee : employees) {
                 System.out.println(employee.getName());
             }
+
+            //insert islemi
+            Employee employee1 = new Employee();
+            employee1.setName("Ahmet");
+            employee1.setSalary(5000);
+            session.persist(employee1);
 
 
             List<String> employeess = session.createQuery("select e.name from Employee e group by e.name").list();
