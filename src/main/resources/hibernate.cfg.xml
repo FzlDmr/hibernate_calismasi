@@ -19,10 +19,9 @@
         <!-- Etkinleştirilen özellikler -->
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
-        <property name="hbm2ddl.auto">none</property>
+        <property name="hbm2ddl.auto">update</property>
         <!-- Entity sınıflarının paketleri -->
-        <mapping class="hibernate.Employee"/>
-        <mapping class="hibernatequerylanguage.Employeee"/>
+        <mapping class="hibernatequerylanguage.Employee"/>
         <mapping class="hibernatequerylanguage.Address"/>
 
 

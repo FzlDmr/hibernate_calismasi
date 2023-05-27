@@ -7,7 +7,6 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
     private long id;
 
     @Column(name = "address_line1")
@@ -21,7 +20,7 @@ public class Address {
 
     @OneToOne
     @JoinColumn
-    private Employeee employee;
+    private Employee employee;
 
     public long getId() {
         return id;
@@ -55,11 +54,11 @@ public class Address {
         this.city = city;
     }
 
-    public Employeee getEmployee() {
+    public Employee getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Employeee employee) {
+    public void setEmployee(Employee employee) {
         this.employee = employee;
     }
 

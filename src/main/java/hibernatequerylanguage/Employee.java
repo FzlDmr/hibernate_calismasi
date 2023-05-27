@@ -1,12 +1,12 @@
 package hibernatequerylanguage;
 
 import jakarta.persistence.*;
+
 @Entity
-@Table(name = "employee")
-public class Employeee {
+@Table(name = "EMPLOYEE")
+public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
@@ -14,10 +14,10 @@ public class Employeee {
     private String name;
 
     @Column(name = "salary")
-    private double salary;
+    private int salary;
 
-    @OneToOne(mappedBy = "employee")
-    private Address address;
+   // @OneToOne(mappedBy = "employee")
+   // private Address address;
 
     public long getId() {
         return id;
@@ -27,13 +27,13 @@ public class Employeee {
         this.id = id;
     }
 
-    public Address getAddress() {
-        return address;
-    }
+   // public Address getAddress() {
+   //     return address;
+   // }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
+  // public void setAddress(Address address) {
+  //     this.address = address;
+  // }
 
     public String getName() {
         return name;
@@ -47,8 +47,16 @@ public class Employeee {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
