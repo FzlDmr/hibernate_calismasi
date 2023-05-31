@@ -1,13 +1,16 @@
-package hibernatequerylanguage;
+package onetomany_manytoone;
 import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-public class Book {
+public class Author {
     @Id
     private Integer id;
     private String name;
-    @ManyToOne
-    @JoinColumn(name="AUTHOR_ID")
-    private Author author;
+    @OneToMany(mappedBy = "author")
+    private List<Book> books = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -25,19 +28,19 @@ public class Book {
         this.name = name;
     }
 
-    public Author getAuthor() {
-        return author;
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public void setAuthor(Author author) {
-        this.author = author;
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     @Override
     public String toString() {
         return
-                " id= " + id +
-                " name= " + name +
-                " author= " + author;
+                " id = " + id +
+                " name = " + name +
+                " books = " + books;
     }
 }
