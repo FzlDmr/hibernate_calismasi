@@ -21,7 +21,11 @@ public class Main {
         try{
             tx=session.beginTransaction();
 
-            //queryleri burada calistiriyorum
+            List<String> employeess1 = session.createQuery("select e.name from Employee e group by e.name order by e.name").list();
+
+            for (String w : employeess1) {
+                System.out.println(w);
+            }
 
             tx.commit();
 

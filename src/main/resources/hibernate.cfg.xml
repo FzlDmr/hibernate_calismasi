@@ -8,7 +8,7 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/courses_db</property>
         <property name="hibernate.connection.username">dev_user</property>
-        <property name="hibernate.connection.password">dev_password</property>
+        <property name="hibernate.connection.password">password</property>
         <property name="hibernate.current_session_context_class">
             org.hibernate.context.internal.ThreadLocalSessionContext</property>
         <property name="current_session_context_class">thread</property>
@@ -20,9 +20,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-        <!-- Entity sınıflarının paketleri -->
-        <mapping class="hibernatequerylanguage.Employee"/>
-        <mapping class="hibernatequerylanguage.Address"/>
+
 
 
 
