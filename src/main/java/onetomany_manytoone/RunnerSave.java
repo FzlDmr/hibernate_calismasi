@@ -1,6 +1,5 @@
 package onetomany_manytoone;
 
-import hibernatequerylanguage.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
