@@ -10,6 +10,12 @@ import java.util.List;
 public class deneme {
 
     public static void main(String[] args) {
+        System.out.println("Aynur deneme");
+        System.out.println("deneme222");
+        System.out.println("deneme222");
+        System.out.println("deneme222");
+        System.out.println("deneme222");
+
 
 
         SessionFactory factory = new Configuration().
