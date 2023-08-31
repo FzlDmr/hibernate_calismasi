@@ -11,6 +11,7 @@ public class deneme {
 
     public static void main(String[] args) {
 
+
         SessionFactory factory = new Configuration().
                 configure("hibernate.cfg.xml").
                 addAnnotatedClass(Employee.class).
@@ -40,6 +41,7 @@ public class deneme {
 
 
 
-
-
 }
+
+
+
